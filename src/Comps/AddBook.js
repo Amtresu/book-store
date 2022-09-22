@@ -1,50 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/book';
 import { v4 as uuidv4 } from 'uuid';
+import { addBook } from '../redux/books/book';
 
-
-
-const AddBook = () => {
-    const dispatch = useDispatch();
-    const [inputState, setState] = useState({ title: '', author: '' });
-    const changeState = (e) => {
-      e.preventDefault();
-      setState({ ...inputState, [e.target.name]: e.target.value });
-    };
-  
-    const bookState = (e) => {
-      e.preventDefault();
-      if (!inputState.title.trim() || !inputState.author.trim()) return;
-      const book = {
-        id: uuidv4(),
-        title: inputState.title,
-        author: inputState.author,
-      };
-      dispatch(addBook(book));
-      setState({ title: '', author: '' });
-    };
-    return (
-      <div>
-        <form onSubmit={bookState}>
-          <input
-            type="text"
-            placeholder="title"
-            value={inputState.title}
-            onChange={changeState}
-            name="title"
-          />
-          <input
-            type="text"
-            placeholder="author"
-            value={inputState.author}
-            onChange={changeState}
-            name="author"
-          />
-          <button type="submit">Add book</button>
-        </form>
-      </div>
-    );
+const AddBookForm = () => {
+  const dispatch = useDispatch();
+  const handleEvent = (e) => {
+    e.preventDefault();
+    const id = uuidv4();
+    const title = document.querySelector('.title').value;
+    const author = document.querySelector('.author').value;
+    dispatch(addBook(id, title, author));
   };
+  return (
+    <div>
+      <form>
+        <input type="text" className="title" placeholder="Title" />
+        <input type="text" className="author" placeholder="Author" />
+        <button onClick={handleEvent} type="submit">Add book</button>
+      </form>
+    </div>
+  );
+};
 
-export default AddBook
+export default AddBookForm;
