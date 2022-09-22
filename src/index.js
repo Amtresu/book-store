@@ -8,6 +8,7 @@ import Category from './Comps/Category';
 import './index.css'
 import { configureStore } from 'redux'
 import { Provider } from 'react-redux'
+import store from './redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,41 +24,7 @@ root.render(
     </Provider>
   </React.StrictMode>
 );
-function addBook(){
-  return{
-      type: "ADD_BOOK",
-      payload: book
-  }
-}
 
-function removeBook(){
-  return{
-      type: "REMOVE_BOOK",
-      payloard: book
-  }
-}
-
-const intialState = []
-
-function reducer(state = intialState, action ){
-  switch(action.type){
-      case ADD_BOOK: 
-          return [
-              ...state,
-              action.payload
-          ]
-      case REMOVE_BOOK: 
-          const updatedArr = state.filter(book => book !== action.payload)
-          return [
-              ...state, updatedArr
-          ]
-          
-  }
-}
-
-store.dispatch(addBook('The Hobbit'))
-store.dispatch(addBook('LOTR'))
-console.log(store)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
