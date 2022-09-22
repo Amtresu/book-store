@@ -1,37 +1,34 @@
+const ADD_BOOK = 'ADD_BOOK';
+const REMOVE_BOOK = 'REMOVE_BOOK';
+
 export function addBook(book){
     return{
-        type: "ADD_BOOK",
-        payload: book
+        type: ADD_BOOK,
+        book,
     }
 }
 
-export function removeBook(book){
+export function removeBook(id){
     return{
-        type: "REMOVE_BOOK",
-        payload: book
+        type: REMOVE_BOOK,
+        id,
     }
 }
 
-const intialState = {
-    count: 0,
-    books: []
-}
+const intialState = [
+    {
+        author: 'J.R.R Tolkein',
+        title: 'The Hobbit'
+    },
+]
 
  export default function bookReducer(state = intialState, action ){
     switch(action.type){
-        case "ADD_BOOK": 
-            return {
-                ...state,
-                count: state.count + 1,
-                books: [...state.books, action.payload]
-            }
-        case "REMOVE_BOOK": 
-            const updatedArr = state.books.filter(book => book !== action.payload)
-            return {
-                ...state,
-                count: state.count - 1,
-                books: updatedArr
-            }
+        case ADD_BOOK: 
+            return [...state, action.book]
+            
+        case REMOVE_BOOK: 
+            return state.filter((book) => book.id !== action.id);
         default:
             return state
             
