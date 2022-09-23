@@ -1,13 +1,18 @@
 body {
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
   text-align: center;
-  background-color: gray;
+  font-family: 'Montserrat';
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-}
-
-ul {
+ul { 
   list-style: none;
 }
+
+a { 
+  text-decoration: none;
+  color: #000;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');

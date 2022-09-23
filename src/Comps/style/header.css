@@ -1,0 +1,28 @@
+header { 
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 0.5rem 3.5rem;
+}
+
+.header-title { 
+  height: 2.313rem;
+  margin: 0.375rem 2.938rem 0.125rem 0;
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #0290ff;
+}
+
+.nav-links { 
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links { 
+  font-size: 0.813rem;
+  letter-spacing: 1.9px;
+  color: #121212;
+}
+
