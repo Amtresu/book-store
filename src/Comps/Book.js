@@ -24,11 +24,13 @@ const Book = (props) => {
       <div className="book-author">{author}</div>
 
       <ul className="book-actions-list">
-        <li>Comments | </li>
+        <li>Comments </li>
+        <li className="spacer">|</li>
         <li><button className="book-remove-button" type="button" onClick={removeBooks}>
-          Remove | 
+          Remove
         </button>
         </li>
+        <li className="spacer2">|</li>
         <li>Edit</li>
       </ul>
 

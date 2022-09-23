@@ -52,10 +52,6 @@
   height: 1.188rem;
   font-size: 0.875rem;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #4386bf;
 }
 
@@ -65,10 +61,6 @@
   height: 1.188rem;
   font-size: 0.875rem;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #4386bf;
   cursor: pointer;
 }
@@ -146,4 +138,12 @@
   font-size: 0.813rem;
   font-weight: 300;
   letter-spacing: 0.5px;
+}
+
+.spacer {
+  margin-left: 5px;
+}
+
+.spacer2 {
+  margin-right: 5px;
 }
